@@ -1,13 +1,13 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
-const API_KEY = ""; // USER NEEDS TO FILL THIS
+const API_KEY = "";
 
 export const analyzeLocation = async (imageSrc, itemName, roomName) => {
     if (!API_KEY) {
         console.warn("Gemini API Key missing, returning mock data.");
         return new Promise((resolve) => {
             setTimeout(() => {
-                resolve(`这是对 ${itemName} 在 ${roomName} 中位置的模拟描述。请在 CameraCapture.vue 或 aiService.js 中配置 API Key 以启用真实分析。`);
+                resolve(`这是对 ${itemName} 在 ${roomName} 中位置的模拟描述`);
             }, 1500);
         });
     }
